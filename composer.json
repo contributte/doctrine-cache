@@ -1,0 +1,31 @@
+{
+	"name": "nettrine/cache",
+	"description": "Doctrine2 cache for Nette Framework",
+	"keywords": ["nette", "doctrine", "cache"],
+	"type": "library",
+	"license": ["MIT"],
+	"homepage": "https://github.com/nettrine/cache",
+	"authors": [
+		{
+			"name": "Milan Felix Šulc",
+			"homepage": "https://f3l1x.io"
+		},
+		{
+			"name": "Josef Benjac",
+			"homepage": "http://josefbenjac.com"
+		}
+	],
+	"require": {
+		"php": ">=7.1",
+		"nette/di": "~2.4.14",
+		"doctrine/orm": "^2.6.2",
+		"doctrine/cache": "^1.8.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Nettrine\\Cache\\": "src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
