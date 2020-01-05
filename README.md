@@ -1,6 +1,6 @@
 # Nettrine Cache
 
-[Doctrine\Cache](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html) for Nette Framework.
+[Doctrine/Cache](https://www.doctrine-project.org/projects/cache.html) for Nette Framework.
 
 [![Build Status](https://img.shields.io/travis/nettrine/cache.svg?style=flat-square)](https://travis-ci.org/nettrine/cache)
 [![Code coverage](https://img.shields.io/coveralls/nettrine/cache.svg?style=flat-square)](https://coveralls.io/r/nettrine/cache)
@@ -17,8 +17,10 @@
 ## Documentation
 
 - [Setup](.docs/README.md#setup)
+- [Relying](.docs/README.md#relying)
 - [Configuration](.docs/README.md#configuration)
 - [Usage](.docs/README.md#usage)
+- [Examples](.docs/README.md#examples)
 
 ## Versions
 
