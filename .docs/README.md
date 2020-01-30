@@ -38,10 +38,10 @@ nettrine.cache:
 
 **Under the hood**
 
-Extension will try to choose a cache driver automatically but you may need to specify one.
+The extension will try to choose a cache driver automatically but you may need to specify one.
 
-`PhpFileCache` and eventually `ApcuCache` are the automatically chosen by default. Overrides it
-using `driver` key.
+`PhpFileCache` and eventually `ApcuCache` are the automatically chosen by default. Override it
+using the `driver` key.
 
 ```yaml
 nettrine.cache:
