@@ -48,6 +48,8 @@ nettrine.cache:
   driver: Doctrine\Common\Cache\ArrayCache()
 ```
 
+`ArrayCache` is preferred for development, as it offers much better performance than `VoidCache` - which might be useful for test environments.
+
 Doctrine provides many drivers, see more at [doctrine/cache documentation](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html).
 
 - `Doctrine\Common\Cache\ApcuCache`
