@@ -17,7 +17,7 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
+    "php": ">=7.2 || ^8.0",
     "contributte/di": "^0.4.2",
     "doctrine/cache": "^1.8.0"
   },
