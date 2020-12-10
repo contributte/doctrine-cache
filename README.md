@@ -52,3 +52,9 @@ This package is currently maintaining by these authors.
 <a href="https://github.com/tlapnet">
   <img width="80" height="80" src="https://avatars1.githubusercontent.com/u/22914186?s=80&v=4">
 </a>
+
+-----
+
+Consider to [support](https://contributte.org/partners.html) **contributte** development team.
+Also thank you for using this package.
+
