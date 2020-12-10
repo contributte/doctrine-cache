@@ -1,39 +1,21 @@
-![Nettrine Cache](https://heatbadger.now.sh/github/readme/nettrine/cache/)
+![](https://heatbadger.now.sh/github/readme/nettrine/cache/)
 
 <p align=center>
-  <a href="https://github.com/nettrine/cache/actions">
-    <img src="https://badgen.net/github/checks/nettrine/cache/master?cache=300">
-  </a>
-  <a href="https://coveralls.io/r/nettrine/cache">
-    <img src="https://badgen.net/coveralls/c/github/nettrine/cache?cache=300">
-  </a>
-  <a href="https://packagist.org/packages/nettrine/cache">
-    <img src="https://badgen.net/packagist/dm/nettrine/cache">
-  </a>
-  <a href="https://packagist.org/packages/nettrine/cache">
-    <img src="https://badgen.net/packagist/v/nettrine/cache">
-  </a>
+  <a href="https://github.com/nettrine/cache/actions"><img src="https://badgen.net/github/checks/nettrine/cache/master?cache=300"></a>
+  <a href="https://coveralls.io/r/nettrine/cache"><img src="https://badgen.net/coveralls/c/github/nettrine/cache?cache=300"></a>
+  <a href="https://packagist.org/packages/nettrine/cache"><img src="https://badgen.net/packagist/dm/nettrine/cache"></a>
+  <a href="https://packagist.org/packages/nettrine/cache"><img src="https://badgen.net/packagist/v/nettrine/cache"></a>
 </p>
 <p align=center>
-  <a href="https://packagist.org/packages/nettrine/cache">
-    <img src="https://badgen.net/packagist/php/nettrine/cache">
-  </a>
-  <a href="https://github.com/nettrine/cache">
-    <img src="https://badgen.net/github/license/nettrine/cache">
-  </a>
-  <a href="http://bit.ly/apittegitter">
-    <img src="https://badgen.net/badge/chat/apitte/cyan">
-  </a>
-  <a href="https://bit.ly/cttfo">
-    <img src="https://badgen.net/badge/support/forum/yellow">
-  </a>
-  <a href="https://contributte.org/partners.html">
-    <img src="https://badgen.net/badge/become/a%20patron/F96854">
-  </a>
-<p>
+  <a href="https://packagist.org/packages/nettrine/cache"><img src="https://badgen.net/packagist/php/nettrine/cache"></a>
+  <a href="https://github.com/nettrine/cache"><img src="https://badgen.net/github/license/nettrine/cache"></a>
+  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
+  <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
+  <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
+</p>
 
 <p align=center>
-Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
+Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
 </p>
 
 ## Usage
@@ -70,6 +52,3 @@ This package is currently maintaining by these authors.
 <a href="https://github.com/tlapnet">
   <img width="80" height="80" src="https://avatars1.githubusercontent.com/u/22914186?s=80&v=4">
 </a>
-
-The development is sponsored by [Tlapnet](https://www.tlapnet.cz)
-
