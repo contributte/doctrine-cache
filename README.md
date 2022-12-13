@@ -1,14 +1,14 @@
-![](https://heatbadger.now.sh/github/readme/nettrine/cache/)
+![](https://heatbadger.now.sh/github/readme/contributte/doctrine-cache/)
 
 <p align=center>
-  <a href="https://github.com/nettrine/cache/actions"><img src="https://badgen.net/github/checks/nettrine/cache/master?cache=300"></a>
+  <a href="https://github.com/contributte/doctrine-cache/actions"><img src="https://badgen.net/github/checks/nettrine/cache/master?cache=300"></a>
   <a href="https://coveralls.io/r/nettrine/cache"><img src="https://badgen.net/coveralls/c/github/nettrine/cache?cache=300"></a>
   <a href="https://packagist.org/packages/nettrine/cache"><img src="https://badgen.net/packagist/dm/nettrine/cache"></a>
   <a href="https://packagist.org/packages/nettrine/cache"><img src="https://badgen.net/packagist/v/nettrine/cache"></a>
 </p>
 <p align=center>
   <a href="https://packagist.org/packages/nettrine/cache"><img src="https://badgen.net/packagist/php/nettrine/cache"></a>
-  <a href="https://github.com/nettrine/cache"><img src="https://badgen.net/github/license/nettrine/cache"></a>
+  <a href="https://github.com/contributte/doctrine-cache"><img src="https://badgen.net/github/license/contributte/doctrine-cache"></a>
   <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
   <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
   <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
