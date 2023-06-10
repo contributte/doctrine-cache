@@ -23,7 +23,7 @@ Website ðŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ðŸ‘
 To install the latest version of `nettrine/cache` use [Composer](https://getcomposer.org).
 
 ```
-$ composer require nettrine/cache
+composer require nettrine/cache
 ```
 
 ## Documentation
@@ -45,12 +45,6 @@ This package is currently maintaining by these authors.
 
 <a href="https://github.com/f3l1x">
   <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
-</a>
-
-## Sponsoring
-
-<a href="https://github.com/tlapnet">
-  <img width="80" height="80" src="https://avatars1.githubusercontent.com/u/22914186?s=80&v=4">
 </a>
 
 -----
