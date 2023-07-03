@@ -2,7 +2,6 @@
 
 namespace Nettrine\Cache\DI;
 
-use Contributte\DI\Helper\ExtensionDefinitionsHelper;
 use Doctrine\Common\Cache\ApcuCache;
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\PhpFileCache;
@@ -35,11 +34,9 @@ final class CacheExtension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 		$config = $this->config;
 
-		$driverName = $this->prefix('driver');
-
 		if ($config->driver === null) {
 			// auto choose
-			$driverDefinition = $builder->addDefinition($driverName)
+			$driverDefinition = $builder->addDefinition($this->prefix('driver'))
 				->setType(Cache::class);
 
 			if (isset($builder->parameters['tempDir'])) {
@@ -55,9 +52,8 @@ final class CacheExtension extends CompilerExtension
 				));
 			}
 		} else {
-			// load from config
-			$definitionsHelper = new ExtensionDefinitionsHelper($this->compiler);
-			$definitionsHelper->getDefinitionFromConfig($config->driver, $driverName);
+			$builder->addDefinition($this->prefix('driver'))
+				->setFactory($config->driver);
 		}
 	}
 
