@@ -27,4 +27,8 @@ Toolkit::test(function (): void {
 
 	Assert::type(ApcuCache::class, $container->getByType(Cache::class));
 	Assert::type(ApcuCache::class, $container->getService('nettrine.cache.driver'));
+
+	// Use this checks after dropping 1.0 support
+	//Assert::type(DoctrineProvider::class, $container->getByType(Cache::class));
+	//Assert::type(ApcuAdapter::class, $container->getService('nettrine.cache.driver')->getPool());
 });
