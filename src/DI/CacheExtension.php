@@ -62,6 +62,16 @@ final class CacheExtension extends CompilerExtension
 						new Statement(ArrayAdapter::class),
 					]);
 				}
+			} elseif (function_exists('apcu_exists')) {
+				/** @phpstan-ignore classConstant.deprecatedClass */
+				if (class_exists(ApcuCache::class)) {
+					/** @phpstan-ignore classConstant.deprecatedClass */
+					$driverDefinition->setFactory(ApcuCache::class);
+				} else {
+					$driverDefinition->setFactory(DoctrineProvider::class . '::wrap', [
+						new Statement(ApcuAdapter::class),
+					]);
+				}
 			} elseif (isset($builder->parameters['tempDir'])) {
 				/** @phpstan-ignore classConstant.deprecatedClass */
 				if (class_exists(PhpFileCache::class)) {
@@ -74,16 +84,6 @@ final class CacheExtension extends CompilerExtension
 						new Statement(FilesystemAdapter::class, [
 							'directory' => $builder->parameters['tempDir'] . '/cache/nettrine.cache',
 						]),
-					]);
-				}
-			} elseif (function_exists('apcu_exists')) {
-				/** @phpstan-ignore classConstant.deprecatedClass */
-				if (class_exists(ApcuCache::class)) {
-					/** @phpstan-ignore classConstant.deprecatedClass */
-					$driverDefinition->setFactory(ApcuCache::class);
-				} else {
-					$driverDefinition->setFactory(DoctrineProvider::class . '::wrap', [
-						new Statement(ApcuAdapter::class),
 					]);
 				}
 			} else {
