@@ -2,10 +2,7 @@
 
 namespace Nettrine\Cache\DI;
 
-use Doctrine\Common\Cache\ApcuCache;
-use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Cache\Cache;
-use Doctrine\Common\Cache\PhpFileCache;
 use Doctrine\Common\Cache\Psr6\DoctrineProvider;
 use Nette\DI\CompilerExtension;
 use Nette\DI\Definitions\Statement;
