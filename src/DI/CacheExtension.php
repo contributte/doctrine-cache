@@ -53,7 +53,9 @@ final class CacheExtension extends CompilerExtension
 				->setType(Cache::class);
 
 			if ($this->debugMode === true) {
+				/** @phpstan-ignore classConstant.deprecatedClass */
 				if (class_exists(ArrayCache::class)) {
+					/** @phpstan-ignore classConstant.deprecatedClass */
 					$driverDefinition->setFactory(ArrayCache::class);
 				} else {
 					$driverDefinition->setFactory(DoctrineProvider::class . '::wrap', [
@@ -61,7 +63,9 @@ final class CacheExtension extends CompilerExtension
 					]);
 				}
 			} elseif (isset($builder->parameters['tempDir'])) {
+				/** @phpstan-ignore classConstant.deprecatedClass */
 				if (class_exists(PhpFileCache::class)) {
+					/** @phpstan-ignore classConstant.deprecatedClass */
 					$driverDefinition->setFactory(PhpFileCache::class, [
 						$builder->parameters['tempDir'] . '/cache/nettrine.cache',
 					]);
@@ -73,7 +77,9 @@ final class CacheExtension extends CompilerExtension
 					]);
 				}
 			} elseif (function_exists('apcu_exists')) {
+				/** @phpstan-ignore classConstant.deprecatedClass */
 				if (class_exists(ApcuCache::class)) {
+					/** @phpstan-ignore classConstant.deprecatedClass */
 					$driverDefinition->setFactory(ApcuCache::class);
 				} else {
 					$driverDefinition->setFactory(DoctrineProvider::class . '::wrap', [
