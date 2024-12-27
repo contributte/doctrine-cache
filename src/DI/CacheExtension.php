@@ -55,12 +55,12 @@ final class CacheExtension extends CompilerExtension
 
 			if ($this->debugMode === true) {
 				$adapterDefinition->setFactory(ArrayAdapter::class);
-			} elseif (function_exists('apcu_exists')) {
-				$adapterDefinition->setFactory(ApcuAdapter::class);
 			} elseif (isset($builder->parameters['tempDir'])) {
 				$adapterDefinition->setFactory(FilesystemAdapter::class, [
 					'directory' => $builder->parameters['tempDir'] . '/cache/nettrine.cache',
 				]);
+			} elseif (function_exists('apcu_exists')) {
+				$adapterDefinition->setFactory(ApcuAdapter::class);
 			} else {
 				throw new InvalidStateException(sprintf(
 					'Unable to find an available cache adapter, please provide one via \'%s\' configuration.',
