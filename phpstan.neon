@@ -2,6 +2,7 @@ includes:
 	- vendor/contributte/phpstan/phpstan.neon
 
 parameters:
+	reportUnmatchedIgnoredErrors: false # Can be dropped together with doctrine/cache:^1
 	level: 9
 	phpVersion: 80100
 
