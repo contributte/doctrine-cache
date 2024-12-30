@@ -16,26 +16,3 @@ parameters:
 		- .docs
 
 	ignoreErrors:
-		-
-			message: """
-				#^Fetching class constant class of deprecated class Doctrine\\\\Common\\\\Cache\\\\ApcuCache\\:
-				Deprecated without replacement in doctrine/cache 1\\.11\\. This class will be dropped in 2\\.0$#
-			"""
-			count: 2
-			path: src/DI/CacheExtension.php
-
-		-
-			message: """
-				#^Fetching class constant class of deprecated class Doctrine\\\\Common\\\\Cache\\\\ArrayCache\\:
-				Deprecated without replacement in doctrine/cache 1\\.11\\. This class will be dropped in 2\\.0$#
-			"""
-			count: 2
-			path: src/DI/CacheExtension.php
-
-		-
-			message: """
-				#^Fetching class constant class of deprecated class Doctrine\\\\Common\\\\Cache\\\\PhpFileCache\\:
-				Deprecated without replacement in doctrine/cache 1\\.11\\. This class will be dropped in 2\\.0$#
-			"""
-			count: 2
-			path: src/DI/CacheExtension.php
