@@ -5,6 +5,7 @@ namespace Tests\Cases\DI;
 use Contributte\Tester\Environment;
 use Contributte\Tester\Toolkit;
 use Contributte\Tester\Utils\ContainerBuilder;
+use Contributte\Tester\Utils\Neonkit;
 use Nette\DI\Compiler;
 use Nette\InvalidStateException;
 use Nettrine\Cache\DI\CacheExtension;
@@ -21,8 +22,11 @@ Toolkit::test(function (): void {
 		ContainerBuilder::of()
 			->withCompiler(function (Compiler $compiler): void {
 				$compiler->addExtension('nettrine.cache', new CacheExtension());
-				$compiler->addDependencies([__FILE__]);
+				$compiler->addConfig(Neonkit::load('
+					nettrine.cache:
+						adapter: null
+				'));
 			})
 			->build();
-	}, InvalidStateException::class, 'Unable to find an available cache driver, please provide one via \'nettrine.cache > driver\' configuration.');
+	}, InvalidStateException::class, "Unable to find an available cache adapter, please provide one via 'nettrine.cache > adapter' configuration.");
 });

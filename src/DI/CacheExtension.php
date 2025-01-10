@@ -34,7 +34,6 @@ final class CacheExtension extends CompilerExtension
 		return Expect::structure([
 			'adapter' => Expect::anyOf(
 				Expect::string(),
-				Expect::array(),
 				Expect::type(Statement::class)
 			)->nullable(),
 		]);
