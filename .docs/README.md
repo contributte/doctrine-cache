@@ -1,101 +1,91 @@
 # Contributte Doctrine Cache
 
-[Doctrine/Cache](https://www.doctrine-project.org/projects/cache.html) for Nette Framework.
-
+Integration of [Doctrine Cache](https://www.doctrine-project.org/projects/cache.html) for Nette Framework.
 
 ## Content
 
-- [Setup](#setup)
+- [Installation](#installation)
 - [Configuration](#configuration)
+  - [Minimal configuration](#minimal-configuration)
+  - [Advanced configuration](#advanced-configuration)
 - [Usage](#usage)
 - [Examples](#examples)
 
+## Installation
 
-## Setup
-
-Install package
+Install package using composer.
 
 ```bash
 composer require nettrine/cache
 ```
 
-Register extension
+Register prepared [compiler extension](https://doc.nette.org/en/dependency-injection/nette-container) in your `config.neon` file.
 
-```yaml
+```neon
 extensions:
   nettrine.cache: Nettrine\Cache\DI\CacheExtension
 ```
 
-
 ## Configuration
 
-**Schema definition**
+### Minimal configuration
+
+```neon
+nettrine.cache:
+  driver: Symfony\Component\Cache\Adapter\FilesystemAdapter(%tempDir%/cache/nettrine-cache)
+```
+
+### Advanced configuration
 
  ```yaml
 nettrine.cache:
   driver: <class|service>
 ```
 
-**Under the hood**
+> [!WARNING]
+> Cache adapter must implement `Psr\Cache\CacheItemPoolInterface` interface.
+> Use any PSR-6 + PSR-16 compatible cache library like `symfony/cache` or `nette/caching`.
 
-The extension will try to choose a cache driver automatically but you may need to specify one.
+In the simplest case, you can define only `adapter`.
 
-`PhpFileCache` and eventually `ApcuCache` are the automatically chosen by default. Override it
-using the `driver` key.
-
-```yaml
+```neon
 nettrine.cache:
-  driver: Doctrine\Common\Cache\ArrayCache()
+  # Create cache manually
+  adapter: App\CacheService(%tempDir%/cache/orm)
+
+  # Use registered cache service
+  adapter: @cacheService
 ```
 
-`ArrayCache` is preferred for development, as it offers much better performance than `VoidCache` - which might be useful for test environments.
+> [!IMPORTANT]
+> You should always use cache for production environment. It can significantly improve performance of your application.
+> Pick the right cache adapter for your needs.
+> For example from symfony/cache:
+>
+> - `FilesystemAdapter` - if you want to cache data on disk
+> - `ArrayAdapter` - if you want to cache data in memory
+> - `ApcuAdapter` - if you want to cache data in memory and share it between requests
+> - `RedisAdapter` - if you want to cache data in memory and share it between requests and servers
+> - `ChainAdapter` - if you want to cache data in multiple storages
 
-Doctrine provides many drivers, see more at [doctrine/cache documentation](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html).
+The extension will automatically guess the best cache adapter for you.
 
-- `Doctrine\Common\Cache\ApcuCache`
-- `Doctrine\Common\Cache\ArrayCache`
-- `Doctrine\Common\Cache\ChainCache`
-- `Doctrine\Common\Cache\CouchbaseBucketCache`
-- `Doctrine\Common\Cache\FilesystemCache`
-- `Doctrine\Common\Cache\MemcachedCache`
-- `Doctrine\Common\Cache\MongoDBCache`
-- `Doctrine\Common\Cache\PhpFileCache`
-- `Doctrine\Common\Cache\PredisCache`
-- `Doctrine\Common\Cache\RedisCache`
-- `Doctrine\Common\Cache\SQLite3Cache`
-- `Doctrine\Common\Cache\VoidCache`
-- `Doctrine\Common\Cache\WinCacheCache`
-- `Doctrine\Common\Cache\ZendDataCache`
-
+- `FilesystemAdapter` - if you have `tempDir` defined
+- `ArrayAdapter` - if you are in CLI mode
+- `ApcuAdapter` - if you have `apcu` extension enabled
+- **defined** - if you have defined `adapter` in configuration
 
 ## Usage
 
-You can count on [Nette Dependency Injection](https://doc.nette.org/en/3.0/dependency-injection).
+There is no need to use cache directly. It is used by other packages like:
 
-```php
-use Doctrine\Common\Cache\Cache;
-
-class MyWorker {
-
-  /** @var Cache */
-  private $cache;
-
-  public function __construct(Cache $cache) {
-    $this->cache = $cache;
-  }
-
-}
-```
-
-Register reader `MyWorker` under services in NEON file.
-
-```yaml
-services:
-  - MyWorker
-```
+- [DBAL](https://github.com/contributte/doctrine-dbal)
+- [ORM](https://github.com/contributte/doctrine-orm)
+- [Migrations](https://github.com/contributte/doctrine-migrations)
+- [Annotations](https://github.com/contributte/doctrine-annotations)
+- [Fixtures](https://github.com/contributte/doctrine-fixtures)
 
 ## Examples
 
-- https://github.com/contributte/playground (playground)
-- https://contributte.org/examples.html (more examples)
-
+> [!TIP]
+> Take a look at more examples in [contributte/doctrine](https://github.com/contributte/doctrine/tree/master/.docs).
