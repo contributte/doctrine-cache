@@ -18,15 +18,15 @@
   ],
   "require": {
     "php": ">=8.2",
-    "nette/di": "^3.1.2",
+    "nette/di": "^3.2.4",
     "doctrine/cache": "^2.2.0",
-    "symfony/cache": "^4.4 || ^5.4 || ^6.4 || ^7.0"
+    "symfony/cache": "^7.2.1"
   },
   "require-dev": {
     "contributte/qa": "^0.4",
     "contributte/tester": "^0.3",
     "contributte/phpstan": "^0.2",
-    "tracy/tracy": "^2.10.3"
+    "tracy/tracy": "^2.10.9"
   },
   "autoload": {
     "psr-4": {
