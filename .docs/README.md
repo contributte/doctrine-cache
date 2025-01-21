@@ -32,14 +32,14 @@ extensions:
 
 ```neon
 nettrine.cache:
-  driver: Symfony\Component\Cache\Adapter\FilesystemAdapter(%tempDir%/cache/nettrine-cache)
+  adapter: Symfony\Component\Cache\Adapter\FilesystemAdapter(directory: %tempDir%/cache/nettrine-cache)
 ```
 
 ### Advanced configuration
 
  ```yaml
 nettrine.cache:
-  driver: <class|service>
+  adapter: <class|service>
 ```
 
 > [!WARNING]
